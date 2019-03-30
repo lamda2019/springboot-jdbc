@@ -6,11 +6,11 @@ spring:
     driver-class-name:  com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
-    #  创建表，不注释掉，会重复建表
-    schema:
-            - classpath:sql/department.sql
-            - classpath:sql/employee.sql
-    initialization-mode: always
+#  创建表，不注释掉，会重复建表
+#    schema:
+#            - classpath:sql/department.sql
+#            - classpath:sql/employee.sql
+#    initialization-mode: always
 
     initialSize: 5
     minIdle: 5
