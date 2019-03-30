@@ -2,7 +2,9 @@ package com.wsc.controller;
 
 
 import com.wsc.bean.Department;
+import com.wsc.bean.Employee;
 import com.wsc.mapper.DepartmentMapper;
+import com.wsc.mapper.EmployeeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,8 @@ public class DeptController {
     @Autowired
     DepartmentMapper departmentMapper;
 
+    @Autowired
+    EmployeeMapper employeeMapper;
 
     /*
     *http://localhost:8080/dept/1
@@ -31,7 +35,13 @@ public class DeptController {
         departmentMapper.insertDept(department);
         return department;
     }
-
+     /*
+     * http://localhost:8080/emp/1
+     * */
+    @GetMapping("/emp/{id}")
+    public Employee getEmp(@PathVariable("id") Integer id){
+        return employeeMapper.getEmpById(id);
+    }
 
 
 
